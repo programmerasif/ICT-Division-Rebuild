@@ -1,0 +1,61 @@
+/* styles.css */
+.background-gradient-image {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../assets/background.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.carousel-wrapper .slick-dots {
+  position: absolute;
+  bottom: 10px; /* Adjust to move the dots within the visible area */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+/* Custom styles for React Slick dots */
+.slick-dots li button:before {
+  font-size: 8px; 
+  color: #A3A3A3; 
+  opacity: 1; 
+}
+
+.slick-dots li.slick-active button:before {
+  color: #4CAF50; 
+  opacity: 1; 
+  font-size: 12px
+}
+@media (min-width: 1200px) {
+  .background-gradient-image {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+  .background-gradient-image {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 767px) {
+  .background-gradient-image {
+    height: 50vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .background-gradient-image {
+    height: 70vh;
+    padding: 10px;
+  }
+}
