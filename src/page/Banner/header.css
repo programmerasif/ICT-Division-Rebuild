@@ -14,6 +14,36 @@
   padding: 20px;
   box-sizing: border-box;
 }
+.background-gradient-image-two {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../assets/banner-three.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.background-gradient-image-three {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../../assets/banner-two.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 70vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
 .carousel-wrapper .slick-dots {
   position: absolute;
   bottom: 10px; /* Adjust to move the dots within the visible area */
@@ -36,26 +66,34 @@
   font-size: 12px
 }
 @media (min-width: 1200px) {
-  .background-gradient-image {
+  .background-gradient-image,
+  .background-gradient-image-two,
+  .background-gradient-image-three{
     height: 70vh;
   }
 }
 
 @media (max-width: 1199px) and (min-width: 768px) {
-  .background-gradient-image {
+  .background-gradient-image,
+  .background-gradient-image-two,
+  .background-gradient-image-three {
     height: 70vh;
   }
 }
 
 @media (max-width: 767px) {
-  .background-gradient-image {
+  .background-gradient-image,
+  .background-gradient-image-two,
+  .background-gradient-image-three {
     height: 50vh;
   }
 }
 
 @media (max-width: 480px) {
-  .background-gradient-image {
-    height: 70vh;
+  .background-gradient-image,
+  .background-gradient-image-two,
+  .background-gradient-image-three{
+    height: 50vh;
     padding: 10px;
   }
 }
