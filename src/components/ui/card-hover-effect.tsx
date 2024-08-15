@@ -1,7 +1,8 @@
+/* eslint-disable prefer-const */
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-
-import { useState } from "react";
+import signe from '../../assets/okey.png'
+import { ReactNode, useState } from "react";
 
 
 export const HoverEffect = ({
@@ -11,7 +12,8 @@ export const HoverEffect = ({
   items: {
     title: string;
     description: string;
-    link: string;
+    types: string[];
+    image:string
   }[];
   className?: string;
 }) => {
@@ -24,10 +26,10 @@ export const HoverEffect = ({
         className
       )}
     >
-      {items.map((item, idx) => (
+      {items.slice(0,8).map((item, idx) => (
         <a
           
-          key={item?.link}
+          key={item?.image}
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -50,8 +52,19 @@ export const HoverEffect = ({
             )}
           </AnimatePresence>
           <Card>
-            <CardTitle>{item.title}</CardTitle>
+            <CardTitle>{[item.title,item?.image]}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
+            {
+              item?.types.map((items) => <div key={items} className={cn(
+                "mt-5 text-zinc-700 tracking-wide leading-relaxed text-sm ",
+                className
+              )}>
+                <div className="flex justify-start items-center gap-4">
+                  <span> <img src={signe} alt="" /></span>
+                  <span>{items}</span>
+                </div>
+              </div>)
+            }
           </Card>
         </a>
       ))}
@@ -69,7 +82,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-4 overflow-hidden bg-[#FAFAFA] border border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
+        "rounded-2xl h-full w-full p-4 overflow-hidden bg-[#DEF8DF]  border-transparent dark:border-white/[0.2] group-hover:border-slate-700 relative z-20",
         className
       )}
     >
@@ -84,11 +97,16 @@ export const CardTitle = ({
   children,
 }: {
   className?: string;
-  children: React.ReactNode;
+  children: ReactNode[];
 }) => {
+  console.log(children[1]);
+  const imageSrc = typeof children[1] === "string" ? children[1] : undefined;
   return (
     <h4 className={cn("text-gray-900 font-bold tracking-wide mt-4", className)}>
-      {children}
+      <div className="flex justify-center items-center flex-col gap-4">
+        <span><img src={imageSrc} alt=""  className="w-16"/></span>
+        <span>{children[0]}</span>
+      </div>
     </h4>
   );
 };
@@ -99,14 +117,15 @@ export const CardDescription = ({
   className?: string;
   children: React.ReactNode;
 }) => {
+  const description = typeof children === "string" ? children : undefined;
   return (
     <p
       className={cn(
-        "mt-8 text-zinc-400 tracking-wide leading-relaxed text-sm",
+        "mt-8 text-zinc-500 tracking-wide leading-relaxed text-sm",
         className
       )}
     >
-      {children}
+      {`${(description as string).slice(0,100)}...`}
     </p>
   );
 };
