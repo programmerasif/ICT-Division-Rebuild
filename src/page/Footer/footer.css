@@ -1,0 +1,43 @@
+
+  
+  .background-footer-image {
+    background: linear-gradient(rgba(0, 0, 0, 0.349), rgba(0, 0, 0, 0.247)),
+      url("../../assets/Footer.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  @media (min-width: 1200px) {
+    .background-footer-image{
+      height: 45vh;
+    }
+  }
+  
+  @media (max-width: 1199px) and (min-width: 768px) {
+    .background-footer-image {
+      height: 45vh;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    .background-footer-image{
+      height: 45vh;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .background-footer-image{
+      height: 45vh;
+      padding: 10px;
+    }
+  }
+  

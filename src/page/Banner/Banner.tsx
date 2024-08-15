@@ -16,7 +16,7 @@ const settings = {
 };
 const Banner = () => {
   return (
-    <div className="carousel-wrapper">
+    <div className="carousel-wrapper ">
       <div className=" overflow-x-hidden">
         <Slider {...settings}>
           <div className="overflow-hidden">

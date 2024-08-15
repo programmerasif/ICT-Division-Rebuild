@@ -92,7 +92,7 @@ const NavBr = () => {
           <div className="py-3 underline underline-offset-8 text-[#EC1C24]">
             Home
           </div>
-          <div className="cursor-pointer">E-service</div>
+          <div className="cursor-pointer" >E-service</div>
           <div className="cursor-pointer">Minister of State</div>
           <div className="cursor-pointer">Low & Policy</div>
           <div className="cursor-pointer">Program</div>
