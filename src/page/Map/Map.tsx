@@ -9,18 +9,7 @@ const Map = () => {
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
 
-      {/* <div className="mt-20">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/YFGNXpErBoY?si=bHiPzvUWfxVMgr7g"
-          title="YouTube video player"
-          
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          refErrerPolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div> */}
+     
     </div>
   );
 };
