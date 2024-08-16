@@ -93,7 +93,7 @@ const projects = [
 ];
 const InformationCatagory = () => {
   return (
-    <div className="px-16 mx-auto mt-20 ">
+    <div className="px-2 md:px-8 xl:px-16  mx-auto mt-20 ">
       <div className="flex justify-start items-center gap-5">
         <img src={signe} alt="" className="w-14"/>{" "}
         <div className="text-2xl font-semibold text-gray-700">

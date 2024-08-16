@@ -1,7 +1,7 @@
 import "./video.css";
 const Video = () => {
   return (
-    <div className="mt-20 px-16 ">
+    <div className="mt-20 px-2 md:px-8 xl:px-16">
       <div className="videoBgImage">
      
         <iframe

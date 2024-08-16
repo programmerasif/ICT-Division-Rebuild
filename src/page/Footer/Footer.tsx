@@ -8,12 +8,12 @@ import { BackgroundBeams } from '@/components/ui/background-beams'
 const Footer = () => {
   return (
     <div className="background-footer-image w-full antialiased mt-20">
-      <div className="flex flex-col justify-center items-center px-16 gap-20  text-white w-full">
-        <div className='text-2xl font-bold'>
+      <div className="flex flex-col justify-center items-center px-2 md:px-8 xl:px-16 mt-20 gap-20  text-white w-full">
+        <div className='text-2xl font-bold hidden md:block'>
           Thank you for visiting the web site of Department of Information and
           Communication Technology
         </div>
-        <div className="grid grid-cols-4 justify-between items-start w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 justify-between items-start w-full gap-5">
           <div className="w-full flex justify-start items-start">
             <div className="flex justify-start  flex-col gap-5 text-start">
                 <h3 className="font-bold text-xl">Related information</h3>
@@ -53,7 +53,7 @@ const Footer = () => {
                 </h5>
             </div>
           </div>
-          <div className="w-full h-full flex justify-end  items-center border-l-4 border-white">
+          <div className="w-full h-full md:flex justify-end  hidden  items-center border-l-4 border-white">
             <img src={logo} alt=""  className='w-3/5 '/>
           </div>
         </div>

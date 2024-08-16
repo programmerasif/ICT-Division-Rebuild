@@ -9,7 +9,7 @@ const NavBr = () => {
   return (
     <div className="relative">
       <img src={navImg} alt="" className="h-[100px] w-full relative" />
-      <div className="absolute z-20 flex justify-start md:justify-between items-center top-0 w-full h-[100px] px-2 md:px-16">
+      <div className="absolute z-20 flex justify-start md:justify-between items-center top-0 w-full h-[100px] px-2 md:px-8 xl:px-16">
         <div className="relative font-semibold w-[9rem] hidden md:block">
           <img src={circle} alt="" className="w-full pt-3" />
           <div className="absolute top-4 inset-0 flex justify-center items-center flex-col">
@@ -46,7 +46,7 @@ const NavBr = () => {
         </div>
       </div>
 
-      <div className="flex flex-col lg:flex-row justify-between items-center px-4 lg:px-16 bg-gray-50 font-semibold text-gray-900 relative">
+      <div className="flex flex-col lg:flex-row justify-between items-center px-2 md:px-8 xl:px-16 bg-gray-50 font-semibold text-gray-900 relative">
         <button
           className="lg:hidden block ml-auto p-2 absolute -top-[4.5rem] right-2 text-gray-900 bg-slate-50 rounded-md z-30"
           onClick={() => setIsOpen(!isOpen)}
@@ -86,16 +86,16 @@ const NavBr = () => {
 
         <div
           className={`flex-col lg:flex-row flex ${
-            isOpen ? "flex" : "hidden"
-          } lg:flex lg:items-center justify-between lg:space-x-8 w-full`}
+            isOpen ? "flex gap-5 px-2" : "hidden"
+          } lg:flex lg:items-center justify-between lg:space-x-8 w-full sm:text-sm xl:text-base`}
         >
           <div className="py-3 underline underline-offset-8 text-[#EC1C24]">
             Home
           </div>
-          <div className="cursor-pointer" >E-service</div>
+          <div className="cursor-pointer">E-service</div>
           <div className="cursor-pointer">Minister of State</div>
           <div className="cursor-pointer">Low & Policy</div>
-          <div className="cursor-pointer">Program</div>
+          <div className="cursor-pointer">Notice</div>
           <div className="cursor-pointer">Gallary</div>
           <div className="cursor-pointer">About Us</div>
           <div className="cursor-pointer">Contact</div>

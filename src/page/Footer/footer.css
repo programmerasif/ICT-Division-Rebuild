@@ -6,7 +6,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 50vh;
+    height: 60vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -18,26 +18,33 @@
   
   @media (min-width: 1200px) {
     .background-footer-image{
-      height: 45vh;
+      height: 60vh;
     }
   }
   
   @media (max-width: 1199px) and (min-width: 768px) {
     .background-footer-image {
-      height: 45vh;
+      height: 60vh;
     }
   }
   
   @media (max-width: 767px) {
     .background-footer-image{
-      height: 45vh;
+      height: 100vh;
     }
   }
   
   @media (max-width: 480px) {
     .background-footer-image{
-      height: 45vh;
+      height: 100vh;
       padding: 10px;
     }
   }
+  
+   @media (max-width: 378px) {
+    .background-footer-image{
+      height: 100vh;
+      padding: 10px;
+    }
+  } 
   
