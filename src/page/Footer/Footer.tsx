@@ -7,8 +7,8 @@ import "./footer.css";
 import { BackgroundBeams } from '@/components/ui/background-beams'
 const Footer = () => {
   return (
-    <div className="background-footer-image w-full antialiased mt-20">
-      <div className="flex flex-col justify-center items-center px-2 md:px-8 xl:px-16 mt-20 gap-20  text-white w-full">
+    <div className="background-footer-image w-full antialiased md:mt-20  mt-10">
+      <div className="flex flex-col justify-center items-center px-2 md:px-8 xl:px-16 md:mt-20  mt-10 gap-20  text-white w-full">
         <div className='text-2xl font-bold hidden md:block'>
           Thank you for visiting the web site of Department of Information and
           Communication Technology

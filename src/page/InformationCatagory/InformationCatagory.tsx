@@ -1,5 +1,5 @@
 import { HoverEffect } from "@/components/ui/card-hover-effect";
-import signe from '../../assets/check-mark.png'
+import signe from "../../assets/check-mark.png";
 
 const projects = [
   {
@@ -93,13 +93,24 @@ const projects = [
 ];
 const InformationCatagory = () => {
   return (
-    <div className="px-2 md:px-8 xl:px-16  mx-auto mt-20 ">
-      <div className="flex justify-start items-center gap-5">
-        <img src={signe} alt="" className="w-14"/>{" "}
-        <div className="text-2xl font-semibold text-gray-700">
-          Informaion <span className="text-[#4CAF50]">Catagory</span>
+    <div className="px-2 md:px-8 xl:px-16  mx-auto md:mt-20  mt-10">
+      <div className="mb-10 text-center">
+        <div className="flex justify-center items-center gap-2">
+          <img src={signe} alt="check-mark" className="w-12 md:w-14" />
+          <h2 className="text-xl md:text-2xl font-semibold text-gray-700">
+            Informaion
+            <span className="text-[#4CAF50]"> Catagory</span>
+          </h2>
         </div>
+        <p className="mt-3 text-sm md:text-base text-gray-600">
+          Organize and classify essential data into relevant categories for easy
+          access and better understanding. Ensure information is grouped
+          logically to enhance user experience and streamline navigation.
+          Quickly find the information you need with clear, structured
+          categories designed for simplicity and efficiency.
+        </p>
       </div>
+      
       <HoverEffect items={projects} />
       <button className="  w-full flex justify-center items-center">
         <span className=" bg-[#4CAF50] w-32 text-gray-50 px-5 py-2 rounded-md">

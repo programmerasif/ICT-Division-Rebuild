@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import navImg from "../../assets/navBg.png";
 import logo from "../../assets/logo.png";
 import circle from "../../assets/circle.png";
@@ -5,6 +6,28 @@ import { useState } from "react";
 
 const NavBr = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(null);
+  const [mobileSubMenuOpen, setMobileSubMenuOpen] = useState(null);
+
+  const handleMouseEnter = (menu:any) => {
+    if (window.innerWidth >= 1024) {
+      setActiveMenu(menu);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (window.innerWidth >= 1024) {
+      setActiveMenu(null);
+    }
+  };
+
+  const handleMobileMenuClick = (menu:any) => {
+    if (mobileSubMenuOpen === menu) {
+      setMobileSubMenuOpen(null);
+    } else {
+      setMobileSubMenuOpen(menu);
+    }
+  };
 
   return (
     <div className="relative">
@@ -34,7 +57,7 @@ const NavBr = () => {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="size-6 text-[#4CAF50]"
+              className="w-6 h-6 text-[#4CAF50]"
             >
               <path
                 strokeLinecap="round"
@@ -58,7 +81,7 @@ const NavBr = () => {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="size-6"
+              className="w-6 h-6"
             >
               <path
                 strokeLinecap="round"
@@ -73,7 +96,7 @@ const NavBr = () => {
               viewBox="0 0 24 24"
               strokeWidth="1.5"
               stroke="currentColor"
-              className="size-6"
+              className="w-6 h-6"
             >
               <path
                 strokeLinecap="round"
@@ -85,21 +108,102 @@ const NavBr = () => {
         </button>
 
         <div
-          className={`flex-col lg:flex-row flex ${
+       
+          className={`flex-col lg:flex-row flex z-50 ${
             isOpen ? "flex gap-5 px-2" : "hidden"
           } lg:flex lg:items-center justify-between lg:space-x-8 w-full sm:text-sm xl:text-base`}
         >
-          <div className="py-3 underline underline-offset-8 text-[#EC1C24]">
+          {/* Main Menu Items */}
+          <div
+            className="relative py-3 underline underline-offset-8 text-[#EC1C24] cursor-pointer"
+            onMouseEnter={() => handleMouseEnter("home")}
+            onMouseLeave={handleMouseLeave}
+            onClick={() => handleMobileMenuClick("home")}
+          >
             Home
+            {/* Submenu */}
+            {activeMenu === "home" || mobileSubMenuOpen === "home" ? (
+              <div className="absolute left-0 top-full mt-1 bg-white shadow-lg rounded-md p-3 z-10 w-64">
+                <div className="cursor-pointer hover:bg-gray-100 px-4 py-2 hover:underline">
+                  Submenu 1
+                </div>
+                <div className="cursor-pointer hover:bg-gray-100 px-4 py-2 hover:underline">
+                  Submenu 2
+                </div>
+                <div className="cursor-pointer hover:bg-gray-100 px-4 py-2 hover:underline">
+                  Submenu 3
+                </div>
+              </div>
+            ) : null}
           </div>
-          <div className="cursor-pointer">E-service</div>
-          <div className="cursor-pointer">Minister of State</div>
-          <div className="cursor-pointer">Low & Policy</div>
-          <div className="cursor-pointer">Notice</div>
-          <div className="cursor-pointer">Gallary</div>
+
+          {/* Other Menu Items */}
+          <div
+            className="relative cursor-pointer"
+            onMouseEnter={() => handleMouseEnter("e-service")}
+            onMouseLeave={handleMouseLeave}
+            onClick={() => handleMobileMenuClick("e-service")}
+          >
+            E-service
+            {activeMenu === "e-service" || mobileSubMenuOpen === "e-service" ? (
+              <div className="absolute left-0 top-full mt-1 bg-white shadow-lg rounded-md p-3 z-10 w-64">
+                <div className="cursor-pointer hover:bg-gray-100 px-4 py-2 hover:underline">
+                  Submenu 1
+                </div>
+                <div className="cursor-pointer hover:bg-gray-100 px-4 py-2 hover:underline">
+                  Submenu 2
+                </div>
+                <div className="cursor-pointer hover:bg-gray-100 px-4 py-2 hover:underline">
+                  Submenu 3
+                </div>
+              </div>
+            ) : null}
+          </div>
+
+          {/* Additional Menu Items with Submenus */}
+          <div
+            className="relative cursor-pointer"
+            onMouseEnter={() => handleMouseEnter("minister")}
+            onMouseLeave={handleMouseLeave}
+            onClick={() => handleMobileMenuClick("minister")}
+          >
+            Minister of State
+            {activeMenu === "minister" || mobileSubMenuOpen === "minister" ? (
+              <div className="absolute left-0 top-full mt-1 bg-white shadow-lg rounded-md p-3 z-10 w-64">
+                <div className="cursor-pointer hover:bg-gray-100 px-4 py-2 hover:underline">
+                  Submenu 1
+                </div>
+                <div className="cursor-pointer hover:bg-gray-100 px-4 py-2 hover:underline">
+                  Submenu 2
+                </div>
+              </div>
+            ) : null}
+          </div>
+
+          {/* More menu items can be added similarly */}
+          <div
+            className="relative cursor-pointer"
+            onMouseEnter={() => handleMouseEnter("notice")}
+            onMouseLeave={handleMouseLeave}
+            onClick={() => handleMobileMenuClick("notice")}
+          >
+            Notice
+            {activeMenu === "notice" || mobileSubMenuOpen === "notice" ? (
+              <div className="absolute left-0 top-full mt-1 bg-white shadow-lg rounded-md p-3 z-10 w-64">
+                <div className="cursor-pointer hover:bg-gray-100 px-4 py-2 hover:underline">
+                  Submenu 1
+                </div>
+                <div className="cursor-pointer hover:bg-gray-100 px-4 py-2 hover:underline">
+                  Submenu 2
+                </div>
+              </div>
+            ) : null}
+          </div>
+
+          <div className="cursor-pointer">Gallery</div>
           <div className="cursor-pointer">About Us</div>
           <div className="cursor-pointer">Contact</div>
-          <div className="cursor-pointer">Affiliated office</div>
+          <div className="cursor-pointer">Affiliated Office</div>
         </div>
       </div>
     </div>
